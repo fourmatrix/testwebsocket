@@ -15,7 +15,7 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 		config.enableSimpleBroker("/topic");
 		//config.enableStompBrokerRelay("/topic", "/queue");
 
-		config.setApplicationDestinationPrefixes("/app");
+		config.setApplicationDestinationPrefixes("/sap");
 		
 		
 	}

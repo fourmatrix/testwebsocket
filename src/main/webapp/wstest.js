@@ -1,4 +1,4 @@
-var stompClient = null;
+		var stompClient = null;
         var subscribeClient1 = null;
 
         function setConnected(connected) {
@@ -9,7 +9,7 @@ var stompClient = null;
         }
 
         function connect() {
-            var socket = new SockJS('/hello');
+            var socket = new SockJS('/testwebsocket/ws/hello');
             stompClient = Stomp.over(socket);
             stompClient.connect({}, function(frame) {
                 setConnected(true);
@@ -30,7 +30,7 @@ var stompClient = null;
 
         function sendName() {
             var name = document.getElementById('name').value;
-            stompClient.send("/app/hello", {}, JSON.stringify({ 'name': name }));
+            stompClient.send("/sap/hello2", {}, JSON.stringify({ 'name': name }));
             //stompClient.send("/topic/greetings", {}, JSON.stringify({ 'name': "topic-" + name }));
         }
 
@@ -51,7 +51,7 @@ var stompClient = null;
                 console.log(message);
                 showGreeting2(message.body);
                 //message.ack();
-            }, {'selector':"filter='topoview'" });//, {'selector':"filter='topoview'" }
+            });//, {'selector':"filter='topoview'" }   , {'selector':"filter='topoview'" }
         }
 
         function unsubscribe() {
@@ -79,7 +79,8 @@ var stompClient = null;
         }
 
         function conn1() {
-            var socket = new SockJS('/hello');
+            var socket = new SockJS('/testwebsocket/ws/hello');
+            //socket = new WebSocket('ws://localhost:8080/testwebsocket/ws/hello')
             stompClient = Stomp.over(socket);
 
             stompClient.connect({}, function(frame) {

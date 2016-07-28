@@ -12,7 +12,8 @@ public class GreetingController {
     @RequestMapping(value="/greeting", method=RequestMethod.GET)
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
-        return "websocket.html";
+        //return "websocket.html";
+        return "websocket.jsp";
     }
 
 }

@@ -14,5 +14,9 @@
     <servlet-name>spring</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>spring</servlet-name>
+    <url-pattern>/ws/*</url-pattern>
+  </servlet-mapping>
 
 </web-app>

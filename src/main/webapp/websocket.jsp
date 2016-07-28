@@ -21,7 +21,7 @@
     </div>
 
     <div>  
-        <header>test subscrible-- websocket.html</header> 
+        <header>test subscrible -- websocket.jsp</header> 
         <button id="conn1" onclick="conn1();">connect 1</button>
         <button id="disconn1" onclick="disconn1();">dis connect 1</button>
         <button id="subscribe" onclick="subscribe();">subscribe</button>
